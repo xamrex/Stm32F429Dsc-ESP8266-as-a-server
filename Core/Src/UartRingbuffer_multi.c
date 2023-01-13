@@ -12,9 +12,7 @@
 /*  Define the device uart and pc uart below according to your setup  */
 
 extern UART_HandleTypeDef huart1;
-extern UART_HandleTypeDef huart2;
-
-
+extern UART_HandleTypeDef huart5;
 
 /* put the following in the ISR 
 

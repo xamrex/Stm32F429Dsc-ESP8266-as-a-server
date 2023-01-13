@@ -11,10 +11,13 @@
 #include "stdio.h"
 #include "string.h"
 #include "main.h"
+#include "stdlib.h"
 extern UART_HandleTypeDef huart1;
-extern UART_HandleTypeDef huart2;
-
-
+extern UART_HandleTypeDef huart5;
+extern char buforek [64] ;
+#define wifi_uart &huart5
+#define device_uart &huart5
+#define pc_uart &huart1
 
 
 char buffer[20];
@@ -46,7 +49,7 @@ void ESP_Init (char *SSID, char *PASSWD)
 {
 	char data[80];
 
-	Ringbuf_init();
+//	Ringbuf_init();
 	Uart_sendstring("AT+RST\r\n", wifi_uart);
 	Uart_sendstring("RESETTING.", pc_uart);
 	for (int i=0; i<5; i++)
@@ -159,6 +162,13 @@ void Server_Start (void)
 	while (!(Get_after("+IPD,", 1, &Link_ID, wifi_uart)));
 	Link_ID -= 48;
 	while (!(Copy_upto(" HTTP/1.1", buftocopyinto, wifi_uart)));
+
+	//dodane pole adresu przepisuje do buforek
+
+		extract(buftocopyinto, "GET /", "HTTP/1.1",buforek);
+
+
+
 	if (Look_for("/ledon", buftocopyinto) == 1)
 	{
 		HAL_GPIO_WritePin(LD3_GPIO_Port, LD3_Pin, 1);
@@ -178,4 +188,32 @@ void Server_Start (void)
 		HAL_GPIO_WritePin(LD3_GPIO_Port, LD3_Pin, 0);
 		Server_Handle("/ ", Link_ID);
 	}
+}
+
+int extract(char *string,  char *left,  char *right, char *output)
+{
+    char  *head;
+    char  *tail;
+    size_t length;
+    char  *result;
+
+    if ((string == NULL) || (left == NULL) || (right == NULL))
+        return 0;
+    length = strlen(left);
+    head   = strstr(string, left);
+    if (head == NULL)
+        return 0;
+    head += length;
+    tail  = strstr(head, right);
+    if (tail == 0)
+        return 0;
+    length = tail - head;
+    result = malloc(1 + length);
+    if (result == NULL)
+        return 0;
+    result[length] = '\0';
+
+
+    memcpy(output, head, length);
+    return 1;
 }

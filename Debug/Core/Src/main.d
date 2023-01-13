@@ -38,8 +38,19 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_hcd.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h \
- ../USB_HOST/App/usb_host.h ../Core/Inc/UartRingbuffer_multi.h \
- ../Core/Inc/ESP8266_HAL.h
+ ../Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery.h \
+ ../Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_ts.h \
+ ../Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery.h \
+ c:\workspace\wifi\drivers\bsp\components\stmpe811\stmpe811.h \
+ c:\workspace\wifi\drivers\bsp\common\ts.h \
+ c:\workspace\wifi\drivers\bsp\common\io.h \
+ ../Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_io.h \
+ ../Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_lcd.h \
+ ../Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_sdram.h \
+ c:\workspace\wifi\utilities\fonts\fonts.h \
+ c:\workspace\wifi\drivers\bsp\components\ili9341\ili9341.h \
+ c:\workspace\wifi\drivers\bsp\common\lcd.h ../USB_HOST/App/usb_host.h \
+ ../Core/Inc/UartRingbuffer_multi.h ../Core/Inc/ESP8266_HAL.h
 ../Core/Inc/main.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 ../Core/Inc/stm32f4xx_hal_conf.h:
@@ -80,6 +91,18 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_hcd.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h:
+../Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery.h:
+../Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_ts.h:
+../Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery.h:
+c:\workspace\wifi\drivers\bsp\components\stmpe811\stmpe811.h:
+c:\workspace\wifi\drivers\bsp\common\ts.h:
+c:\workspace\wifi\drivers\bsp\common\io.h:
+../Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_io.h:
+../Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_lcd.h:
+../Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_sdram.h:
+c:\workspace\wifi\utilities\fonts\fonts.h:
+c:\workspace\wifi\drivers\bsp\components\ili9341\ili9341.h:
+c:\workspace\wifi\drivers\bsp\common\lcd.h:
 ../USB_HOST/App/usb_host.h:
 ../Core/Inc/UartRingbuffer_multi.h:
 ../Core/Inc/ESP8266_HAL.h:

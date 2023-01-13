@@ -12,6 +12,6 @@
 void ESP_Init (char *SSID, char *PASSWD);
 
 void Server_Start (void);
-
+int extract(char *string,  char *left,  char *right, char *output);
 
 #endif /* INC_ESP8266_HAL_H_ */

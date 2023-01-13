@@ -14,9 +14,11 @@
 /* change the size of the buffer */
 #define UART_BUFFER_SIZE 512
 
-#define wifi_uart &huart2
-#define device_uart &huart2
+
+#define wifi_uart &huart5
+#define device_uart &huart5
 #define pc_uart &huart1
+
 
 typedef struct
 {

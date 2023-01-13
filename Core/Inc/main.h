@@ -28,6 +28,10 @@ extern "C" {
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f4xx_hal.h"
+#include "stm32f429i_discovery.h"
+#include "stm32f429i_discovery_ts.h"
+#include "stm32f429i_discovery_io.h"
+#include "stm32f429i_discovery_lcd.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -215,6 +219,8 @@ void Error_Handler(void);
 #define D3_GPIO_Port GPIOD
 #define G7_Pin GPIO_PIN_3
 #define G7_GPIO_Port GPIOD
+#define B2_Pin GPIO_PIN_6
+#define B2_GPIO_Port GPIOD
 #define G3_Pin GPIO_PIN_10
 #define G3_GPIO_Port GPIOG
 #define B3_Pin GPIO_PIN_11
